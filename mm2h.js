@@ -8,7 +8,7 @@ const replaceRegex = function(regex, replacement){
 const codeBlockRegex = /(```([a-z0-9 ]*)?)([\s\S]*?)(```)/gm;
 const inlineCodeRegex = /(`)(.*?)\1/g;
 const imageRegex = /!\[([^\[]+)\]\(([^\)]+)\)/g;
-const linkRegex = /(https?:[^\s]{4,})/g;
+const linkRegex = /(([A-Za-z0-9_-]*?)|(\([A-Za-z0-9 -]*?\)))?\|?(https?:[^()\[\]{}|\s]{4,})/g;
 const headingRegex = /\n(#+\s*)(.*)/g;
 const boldItalicsRegex = /(\*{1,2})(.*?)\1/g;
 const strikethroughRegex = /(\~\~)(.*?)\1/g;
@@ -32,8 +32,10 @@ const inlineCodeReplacer = function(fullMatch, tagStart, tagContents){
 const imageReplacer = function(fullMatch, tagTitle, tagURL){
 	return '<img src="' + tagURL + '" alt="' + tagTitle + '" />';
 }
-const linkReplacer = function(fullMatch, tagTitle, tagURL){
-	return '<a href="' + tagTitle + '" target="_blank">' + tagTitle + '</a>';
+const linkReplacer = function(fullMatch, usefulMatch, tagTitle, tagTitleWithSpaces, tagURL) {
+	if(!usefulMatch) usefulMatch = tagURL;
+	if(usefulMatch.startsWith('(') && usefulMatch.endsWith(')')) usefulMatch = usefulMatch.substring(1, usefulMatch.length -1);
+	return '<a href="' + tagURL + '" target="_blank">' + usefulMatch + '</a>';
 }
 const headingReplacer = function(fullMatch, tagStart, tagContents){
 	return '\n<h' + tagStart.trim().length + '>' + tagContents + '</h' + tagStart.trim().length + '>';
