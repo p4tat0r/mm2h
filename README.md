@@ -1,15 +1,16 @@
 # mm2h  
 My Markdown 2 Html converter  
 It's far from perfect, but that's a one that suits my needs.  
-I used to work with `Showdown` (https://github.com/showdownjs/showdown) but it does not behave like I expect such a lib to behave.  
+I used to work with Showdown|https://github.com/showdownjs/showdown but it does not behave like I expect such a lib to behave.  
   
-I tried other libs from this post from stack overflow : https://stackoverflow.com/questions/1319657/javascript-to-convert-markdown-textile-to-html-and-ideally-back-to-markdown-t  
+NB : The links are not like markdown ones, I simplified the syntax, that's why they are "broken" in github markdown.  
+  
+I tried other libs from (this post from stack overflow)|https://stackoverflow.com/questions/1319657/javascript-to-convert-markdown-textile-to-html-and-ideally-back-to-markdown-t  
   
 But none of them convinced me for what I wanted.  
   
-I'm a lazy dev, and I started from this base: https://github.com/HardfunStudios/dora_aws/blob/main/static/scripts/parse-md.js   
-Or some other similar repo, I see a lot of repos use this code.  
-  
+I'm a lazy dev(, and I started from (this base)|https://github.com/HardfunStudios/dora_aws/blob/main/static/scripts/parse-md.js)   
+Or some other similar repo, see that search : https://github.com/search?q=const+orderedListRegex+%3D+%2F%28%5Cn%5Cs*%28%5B0-9%5D%2B%5C.%29%5Cs.*%29%2B%2Fg%3B&type=code
   
 # Some Examples  
 You **don't need** to add 2 freaking non-sensical whitespaces at the end  
