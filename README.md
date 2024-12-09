@@ -101,9 +101,9 @@ And finally include it inside the `html_head` js like `monokai.min.js`
 4. Other little quirks here and there, but not that many  
   
 ## What I would like to do (because it's possible)  
-1. Make proper markdown links (or a more friendly syntax)  
-2. Improve CSS of code blocks  
-3. Replace `p` tags with `br` and make them work properly  
+1. Improve CSS of code blocks  
+2. Replace `p` tags with `br` and make them work properly  
+3. Make proper markdown links (or a more friendly syntax) [DONE] 
   
 ## What I'm proud of  
  - Integration with `highlight.js`  
